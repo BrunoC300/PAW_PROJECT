@@ -1,0 +1,148 @@
+<%- include('partials/header'); -%>
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+            <h3>Bem vindo</h3>
+            <p>Regista te e ajuda-nos no combate ao Covid-19!</p>
+            <input type="submit" value="Login" />
+        </div>
+        <div class="col-md-9 register-right">
+            <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                        aria-controls="home" aria-selected="true">Paciente</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                        aria-controls="profile" aria-selected="false">Técnico</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Registar como Paciente</h3>
+                    <form action="/register" method="POST">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control"
+                                        placeholder="First Name *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="ultimoNome" class="form-control" placeholder="Last Name *"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Password *"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password *"
+                                        required />
+
+                                    <!-- SCRIPT PARA CONFIRMAR SE PASSWORDS DÃO MATCH (ADICIONAR DEPOIS)
+                                        <input type="password" name="password" id="password" onchange='check_pass();'/>
+                                        <input type="password" name="confirm_password" id="confirm_password" onchange='check_pass();'/>
+                                        <input type="submit" name="submit"  value="registration"  id="submit" disabled/>
+                                    function check_pass() {
+                                            if (document.getElementById('password').value ==
+                                                document.getElementById('confirm_password').value) {
+                                                    document.getElementById('submit').disabled = false;
+                                            } else {
+                                                document.getElementById('submit').disabled = true;
+                                            }
+                                        }-->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Email *"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" minlength="10" maxlength="10" name="contacto"
+                                        class="form-control" placeholder="Contacto Telefónico" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" size="1" name="sexo" required>
+                                        <option class="hidden" selected disabled>Selecione o seu sexo *</option>
+                                        <option>Masculino</option>
+                                        <option>Feminino</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="morada" class="form-control"
+                                        placeholder="Insira a sua morada" />
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <h3 class="register-heading">Registar como Técnico</h3>
+                    <form action="/register" method="POST">
+                        <div class="row register-form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="primeiroNome" class="form-control"
+                                        placeholder="First Name *" required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="ultimoNome" class="form-control" placeholder="Last Name *"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" class="form-control" placeholder="Password *"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control" placeholder="Confirm Password *"
+                                        required />
+
+                                    <!-- SCRIPT PARA CONFIRMAR SE PASSWORDS DÃO MATCH (ADICIONAR DEPOIS)
+                                        <input type="password" name="password" id="password" onchange='check_pass();'/>
+                                        <input type="password" name="confirm_password" id="confirm_password" onchange='check_pass();'/>
+                                        <input type="submit" name="submit"  value="registration"  id="submit" disabled/>
+                                    function check_pass() {
+                                            if (document.getElementById('password').value ==
+                                                document.getElementById('confirm_password').value) {
+                                                    document.getElementById('submit').disabled = false;
+                                            } else {
+                                                document.getElementById('submit').disabled = true;
+                                            }
+                                        }-->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="email" class="form-control" placeholder="Email *"
+                                        required />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" minlength="10" maxlength="10" name="contacto"
+                                        class="form-control" placeholder="Contacto Telefónico" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" size="1" name="sexo" required>
+                                        <option class="hidden" selected disabled>Selecione o seu sexo</option>
+                                        <option>Masculino</option>
+                                        <option>Feminino</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="funcao" class="form-control"
+                                        placeholder="Insira a sua função" />
+                                </div>
+                                <input type="submit" class="btnRegister" value="Register" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer'); -%>
